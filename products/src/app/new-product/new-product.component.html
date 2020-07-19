@@ -1,0 +1,126 @@
+<div class="card">
+    <form [formGroup]='newuser' (ngSubmit)="addproduct()">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                           <div class="formGroup">
+                                
+                            <td>
+                                <label>Product Id</label> 
+                            </td>
+                            <td><input type="text" name="p_id" [(ngModel)]='productitem.productId'[class.is-invalid]="newuser.get('productId').invalid && newuser.get('productId').touched" formControlName='productId' required></td>
+                      </div>
+                      <div *ngIf="newuser.get('productId').invalid && newuser.get('productId').touched">
+                        <small *ngIf="newuser.get('productId').errors?.required" class="text-danger">Enter productId</small>
+                        
+                    </div>
+                        </tr>
+                        <tr>
+                            <div class="formGroup">
+                            <td>
+                        
+                                <label>Product Name</label>
+                            </td>
+                            <td><input type="text" name="p_name" [(ngModel)]="productitem.productName" [class.is-invalid]="newuser.get('productName').invalid && newuser.get('productName').touched" formControlName='productName'  required> </td>
+                       </div> 
+                       <div *ngIf="newuser.get('productName').invalid && newuser.get('productName').touched">
+                        <small *ngIf="newuser.get('productName').errors?.required" class="text-danger">Enter productName</small>
+                        
+                    </div></tr>
+                       <div class="formGroup">
+                        <tr>
+                            <td>
+                                <label>Product code</label>
+                            </td>
+                            <td><input type="text" name="p_code" [(ngModel)]="productitem.productCode" [class.is-invalid]="newuser.get('productCode').invalid && newuser.get('productCode').touched" formControlName='productCode'  name='email' required></td>
+                        </tr></div>
+                        <div *ngIf="newuser.get('productCode').invalid && newuser.get('productCode').touched">
+                            <small *ngIf="newuser.get('productCode').errors?.required" class="text-danger">Enter productCode</small>
+                            
+                        </div>
+                        <div class="formGroup">
+                        <tr>
+                            <td>
+                                <label>Product Date </label>
+                            </td>
+                            <td><input type="text" name="p_date" [(ngModel)]="productitem.releaseDate" [class.is-invalid]="newuser.get('releaseDate').invalid && newuser.get('releaseDate').touched" formControlName='releaseDate'   required></td>
+                        </tr></div>
+                        <div *ngIf="newuser.get('releaseDate').invalid && newuser.get('releaseDate').touched">
+                            <small *ngIf="newuser.get('releaseDate').errors?.required" class="text-danger">Enter product date</small>
+                            
+                        </div>
+                        <div class="formGroup">
+                            <tr>
+                                <td>
+                                    <label>Product Description </label>
+                                </td>
+                                <td><input type="text" name="p_desc" [(ngModel)]="productitem.description" [class.is-invalid]="newuser.get('description').invalid && newuser.get('description').touched" formControlName='description'   required></td>
+                            </tr></div>
+                            <div *ngIf="newuser.get('description').invalid && newuser.get('description').touched">
+                                <small *ngIf="newuser.get('description').errors?.required" class="text-danger">Enter product description</small>
+                                
+                            </div>
+                      <!--  <div class="=formGroup">
+                        <tr>
+                            <td>
+                                <label>Product Desc</label>
+                            </td>
+                            <td><input type="text" name="p_desc" [(ngModel)]="productitem.description" [class.is-invalid]="newuser.get('description').invalid && newuser.get('description').touched" formControlName='description'  required></td>
+                        </tr>
+                    </div>
+                        <div *ngIf="newuser.get('description').invalid && newuser.get('description').touched">
+                            <small *ngIf="newuser.get('description').errors?.required" class="text-danger">Enter product description</small>
+                            
+                        </div>-->
+                        <div class="formGroup">
+                        <tr>
+                            <td>
+                                <label>Product Price</label>
+                            </td>
+                            <td><input type="text" name="p_price" [(ngModel)]="productitem.price" [class.is-invalid]="newuser.get('price').invalid && newuser.get('price').touched" formControlName='price' required></td>
+                        </tr></div>
+                        <div *ngIf="newuser.get('price').invalid && newuser.get('price').touched">
+                            <small *ngIf="newuser.get('price').errors?.required" class="text-danger">Enter product price</small>
+                            
+                        </div>
+                        <div class="formGroup">
+                        <tr>
+                            <td>
+                                <label>Product Star Rating</label>
+                            </td>
+                            <td><input type="text" name="p_rate" [(ngModel)]="productitem.starRating" [class.is-invalid]="newuser.get('starRating').invalid && newuser.get('starRating').touched" formControlName='starRating'  required></td>
+
+                        </tr></div>
+                        <div *ngIf="newuser.get('starRating').invalid && newuser.get('starRating').touched">
+                            <small *ngIf="newuser.get('starRating').errors?.required" class="text-danger">Enter product starRating</small>
+                            
+                        </div>
+                        <div class="formGroup">
+                        <tr>
+                            <td>
+                                <label>Product image</label>
+                            </td>
+                            <td><input type="text" name="p_image" [(ngModel)]="productitem.imageUrl" [class.is-invalid]="newuser.get('imageUrl').invalid && newuser.get('imageUrl').touched" formControlName='imageUrl'  required></td>
+                        </tr></div>
+                        <div *ngIf="newuser.get('imageUrl').invalid && newuser.get('imageUrl').touched">
+                            <small *ngIf="newuser.get('imageUrl').errors?.required" class="text-danger">Enter product image</small>
+                            
+                        </div>
+                        <div class="formGroup">
+                        <tr>
+                            <td>
+                                 <input type="submit" value="Submit" [disabled]="newuser.invalid">
+                            </td>
+                        </tr>
+                        </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
